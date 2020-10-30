@@ -1,19 +1,50 @@
-body {
-    font-family: 'Segoe UI', Calibri, Arial;
-    margin:0;
-    background-color: lightslategray ;
+/**
+ * Main Class that will have our board
+*/
+.wrapper {
+    background-color: rgb(117, 109, 109);
+    width: 400px;
+    margin: auto;
+    margin-top: 100px;
+    height: 400px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+;     
 }
-h1 {
-    font-weight: lighter;
+/**
+ * Subclass for every cell in the Wrapper
+*/
+.box {
+    
+    background-color: white;
+    border: black 1px solid;
     text-align: center;
-    padding: 15pt;
+    display: grid;
+    align-items: center;
+
 }
-h2{
-    font-weight:normal;
-    text-align:center;
+/**
+ * A subclass in the box which will wrap the two choices - 'X' and 'O'
+ * Both choices are displayed inline.
+*/
+.choice-wrapper {
+    font-weight: bolder;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    
+
 }
-h3{
-    font-weight:normal;
-    margin:3px 0px;
-    text-align:center;
+/**
+ * The container which will have the 'X' or 'O'
+*/
+.choice {
+    cursor: pointer;
+    font-size: 5em;
 }
+
+
+
+
