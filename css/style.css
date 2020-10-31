@@ -34,7 +34,7 @@ body {
     text-align: center;
     display: grid;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 50%;
     transition: 0.3s;
 }
  
