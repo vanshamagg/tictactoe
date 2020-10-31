@@ -4,14 +4,16 @@
 body {
     background-color:  #121212;
 }
+
+
 .wrapper {
-    --board--size--min: 680px;
-    --board--size-max: 800px;
+    --board--size: 680px;
+    
     background-color: #04141b;
-    width: var(--board--size--min);
+    width: var(--board--size);
     margin: auto;
     margin-top: -10px;
-    height: var(--board--size--min);
+    height: var(--board--size);
     display: grid;
     grid-gap: 10px;
     grid-template-rows: 1fr 1fr 1fr;
@@ -25,10 +27,7 @@ body {
 /**
  * Subclass for every cell in the Wrapper
 */
-@keyframes hoverBox {
-    from {background-color: #05202f;}
-    to {background-color: #053650;}
-  }
+
 .box {
     background-color:  #05202f;
     text-align: center;
@@ -37,12 +36,19 @@ body {
     border-radius: 50%;
     transition: 0.3s;
 }
- 
 
 .box:hover {
     background-color: #053650;
-
 }
+.box-success {
+    background-color:  #044223;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
 /**
  * A subclass in the box which will wrap the two choices - 'X' and 'O'
  * Both choices are displayed inline.
