@@ -133,7 +133,7 @@ var mainBoard = {
             }
         
         //logic for second diagonal
-        if( !(helper.value(0,2)===null && helper.value(1,1)===null && helper.value(2,1)===null) )
+        if( !(helper.value(0,2)===null && helper.value(1,1)===null && helper.value(2,0)===null) )
             if( helper.value(0,2) ===  helper.value(1,1) && helper.value(1,1) === helper.value(2,0)) {
                 helper.box(0, 2).className = helper.box(1, 1).className = helper.box(2, 0).className = "box-success";
                 return true;

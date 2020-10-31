@@ -5,10 +5,38 @@ body {
     background-color:  #121212;
 }
 
+.extras {
+    background: transparent;
+    width: 20%;
+    float: left;
+    position: absolute;
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
 
+#btn2 {
+    margin: auto;
+    font-size: 3em;
+    padding: 0.4em;
+    border-radius: 30px;
+    border: 2px solid snow;
+    background: transparent;
+    transition: 0.3s;
+    color: snow;
+}
+#btn2:hover {
+    background: snow;
+    color: black;
+    cursor: pointer;
+    padding: 0.5em;
+    font-size: 3.2em;
+}
 .wrapper {
     --board--size: 680px;
-    
+    position: relative;
     background-color: #04141b;
     width: var(--board--size);
     margin: auto;
