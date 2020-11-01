@@ -41,23 +41,40 @@ var helper = {
 var mainBoard = {
     boxes: [],
     size: 9,
+    stepCount: 1,
     symbolX: String.fromCharCode(0X2716),
     symbolO: String.fromCharCode(0X2742),
 
     handlerMouseOver:  function (obj) {
         var choiceList =  obj.childNodes;
         choiceList[0].style.display = "grid";
+        if(mainBoard.stepCount % 2  === 0) {
+            // console.log("IN");
+            // console.log(choiceList[0].childNodes[0].innerText)
+            choiceList[0].childNodes[0].innerText =   this.symbolO;
+        }
+        else {
+            choiceList[0].childNodes[0].innerText =   this.symbolX;
+        }
     },
     handlerMouseLeave: function (obj) {
         var choiceList =  obj.childNodes;
         choiceList[0].style.display = "none";
     }, 
-    afterChoiceSelection: function (obj, value) {
+    afterChoiceSelection: function (obj) {
         var box =  obj.parentNode.parentNode;
         box.removeAttribute("onmouseover");
         box.removeAttribute("onmouseleave");
-        box.setAttribute("value", `${value}`);
-        box.innerText =  value;
+        if (mainBoard.stepCount % 2 === 0) {
+            box.setAttribute("value", `${mainBoard.symbolO}`);
+            box.innerText =  mainBoard.symbolO;
+        }
+        else
+        {
+            box.setAttribute("value", `${mainBoard.symbolX}`);
+            box.innerText =  mainBoard.symbolX;
+        }
+        mainBoard.stepCount++;
         console.log("Nice Move !!");
        
     },
@@ -166,26 +183,17 @@ var mainBoard = {
             cells[i].appendChild(choiceWrapper);
             
 
-            // Choice X
-            var choiceX =  document.createElement("div");
-            choiceX.className = "choice";
-            choiceX.setAttribute("id", `${i}-X`)
-            choiceX.setAttribute("onclick", `mainBoard.afterChoiceSelection(this, '${this.symbolX}')`);
-            choiceX.addEventListener('click', this.letsPlayBoi);
-            var text =  document.createTextNode(this.symbolX);
-            choiceX.appendChild(text);
-            choiceWrapper.append(choiceX);
+            // Choice 
+            var choice =  document.createElement("div");
+            choice.className = "choice";
+            choice.setAttribute("id", `${i}-X`)
+            choice.setAttribute("onclick", `mainBoard.afterChoiceSelection(this)`);
+            choice.addEventListener('click', this.letsPlayBoi);
+            var text =  document.createTextNode(" ");
+            choice.appendChild(text);
+            choiceWrapper.append(choice);
             
-
-            // Choice O
-            var choiceO =  document.createElement("div");
-            choiceO.className = "choice";
-            choiceO.setAttribute("id", `${i}-O`)
-            choiceO.setAttribute("onclick", `mainBoard.afterChoiceSelection(this, '${this.symbolO}')`);
-            choiceO.addEventListener('click', this.letsPlayBoi);
-            var text =  document.createTextNode(this.symbolO);
-            choiceO.appendChild(text);
-            choiceWrapper.append(choiceO);
+            
         }
         
         this.boxes.push(cells.slice(0,3));

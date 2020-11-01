@@ -85,7 +85,7 @@ body {
     font-weight: bolder;
     align-items: center;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     height: auto;   
 }
 /**
@@ -93,12 +93,12 @@ body {
 */
 .choice {
     cursor: pointer;
-    font-size: 40%;
+    font-size: 60%;
     transition: 0.2s;    
 }
 
 .choice:hover {
-    font-size: 48%;
+    font-size: 78%;
 }
 
 
