@@ -68,6 +68,7 @@ body {
 .box:hover {
     background-color: #053650;
 }
+
 .box-success {
     background-color:  #044223;
     text-align: center;
