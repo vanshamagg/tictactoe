@@ -1,5 +1,7 @@
 
 /**
+ * TIC TAC TOE 
+ * 02-NOV-2020
  * @author Vansham Aggarwal <vanshamagg@gmail.com>
  * @description The main object starts here. Contains all the methods and properties
  * for the successful construction and manipulation of the TIC TAC TOE 
