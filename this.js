@@ -81,7 +81,7 @@ var mainBoard = {
     },
     /**
      * @author Vansham Aggarwal <vanshamagg@gmail.com>
-     * Fire it to play it :)
+     * @description Fire it to play it :)
      */
     letsPlayBoi: function () {  
         
@@ -166,7 +166,7 @@ var mainBoard = {
     },
     /**
      * @author Vansham Aggarwal <vanshamagg@gmail.com>
-     * Populates the board with the cells, and attaches the necessary event handlers
+     * @description Populates the board with the cells, and attaches the necessary event handlers
      */
     populateBoard: function () {
         console.log(this.symbolO);
